@@ -1,7 +1,7 @@
 import re 
 
 # char = (r"[A-Z]", r"[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]", "Hello@123")
-def password_checker():
+def password_strength(password):
 
     password =input("Enter the password:- ")
 
@@ -21,6 +21,22 @@ def password_checker():
         return "Medium: Add some special charecter to make password strong."
 
 
-    return "Stroge: your password is strong and secure",password
-print(password_checker())
+    return "Stroge: your password is strong and secure ",password
+# print(password_strength())
 
+#check the password strength...
+def password_checker():
+
+    while True:
+        password=input("\nEnter the password (or type exit to quit): ")
+
+        if password.lower()=="exit":
+            print("Thanks for check password-strength checker!")
+            break
+
+        result = (password_strength(password))
+        print(result)
+
+#run the password checker..
+if __name__ == "__main__":
+    password_checker()
